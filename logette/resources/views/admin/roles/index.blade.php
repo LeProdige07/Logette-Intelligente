@@ -7,12 +7,15 @@
             <div class="card card-default">
                 <div class="card-header">
                     <h2>Roles</h2>
-                    @if (Session::has('status'))
-                        <div class="alert alert-success">
-                            {{ Session::get('status') }}
-                        </div>
-                    @endif
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-role"><i
+                            class="mdi mdi-plus mr-1"></i>Ajouter
+                    </button>
                 </div>
+                @if (Session::has('status'))
+                    <div class="alert alert-success">
+                        {{ Session::get('status') }}
+                    </div>
+                @endif
                 <div class="card-body">
                     <div class="collapse" id="collapse-data-tables">
 
@@ -42,12 +45,12 @@
                                     <td>1</td>
                                     <td>
                                         @permission('Role', 'update')
-                                        <a href="{{ route('roles.edit', $role->id) }}"
-                                            class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
+                                            <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary"><i
+                                                    class="mdi mdi-pencil"></i></a>
                                         @endpermission
                                         @permission('Role', 'delete')
-                                        <a href="{{ route('roles.destroy', $role->id) }}" id="delete"
-                                            class="btn btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                                            <a href="{{ route('roles.destroy', $role->id) }}" id="delete"
+                                                class="btn btn-danger"><i class="mdi mdi-close"></i></a>
                                         @endpermission
                                     </td>
                                     <td>
@@ -65,4 +68,5 @@
         </div>
 
     </div>
+    @include('admin.roles.modal.create')
 @endsection

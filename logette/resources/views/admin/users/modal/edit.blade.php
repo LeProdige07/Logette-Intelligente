@@ -4,7 +4,7 @@
     'enctype' => 'multipart/form-data',
 ]) !!}
 @csrf
-<div class="modal fade text-left" id="ModalEdit{{ $user->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade text-left" id="modal-edit-user{{ $user->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -49,8 +49,7 @@
                 </div>
             </div>
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn gray btn-outline-secondary"
-                    data-dismiss="modal">{{ __('quitter') }}</button>
+                <button type="button" class="btn btn-smoke btn-pill" data-dismiss="modal">Quitter</button>
                 <button type="submit" class="btn btn-warning">{{ __('Edit') }}</button>
             </div>
         </div>

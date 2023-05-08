@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
                 <div class="modal-header px-4">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Créer un abonné</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Créer un utilisateur</h5>
                 </div>
                 <div class="modal-body px-4">
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer px-4">
+                <div class="modal-footer px-4 justify-content-between">
                     <button type="button" class="btn btn-smoke btn-pill" data-dismiss="modal">Quitter</button>
                     <button type="submit" class="btn btn-primary btn-pill">Enregistrer</button>
                 </div>

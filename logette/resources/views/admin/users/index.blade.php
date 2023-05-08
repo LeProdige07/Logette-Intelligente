@@ -7,10 +7,10 @@
             <div class="card card-default">
                 <div class="card-header">
                     <h2>Utilisateurs</h2>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-user"> Add
-                        Contact
+                    @permission('User', 'create')
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-user"><i class="mdi mdi-plus mr-1"></i>Ajouter
                       </button>
-
+                    @endpermission
                 </div>
                 @if (count($errors) > 0)
                       <div class="alert alert-danger">
@@ -58,19 +58,23 @@
 
                                         @permission('User', 'update')
                                             <a class="btn btn-primary" href="#" data-toggle="modal"
-                                                data-target="#ModalEdit{{ $user->id }}">modifier</a>
+                                                data-target="#modal-edit-user{{ $user->id }}"><i class="mdi mdi-pencil"></i></a>
                                         @endpermission
                                         @permission('User', 'delete')
                                             <a href="#" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#ModalDelete{{ $user->id }}" id="delete">supprimer</a>
+                                                data-target="#ModalDelete{{ $user->id }}" id="delete"><i class="mdi mdi-close"></i></a>
                                         @endpermission
+                                        @include('admin.users.modal.edit')
                                     </td>
                                     <td>
                                         @permission('User', 'read')
-                                            <a class="dropdown-toggle icon-burger-mini" href="#">
+                                            <a class="dropdown-toggle icon-burger-mini" href="#"  data-toggle="modal"
+                                            data-target="#modal-show-user{{ $user->id }}">
                                             </a>
                                         @endpermission
                                     </td>
+                                    @include('admin.users.modal.show')
+                                    @include('admin.users.modal.delete')
                                 </tr>
                             @endforeach
                         </tbody>
