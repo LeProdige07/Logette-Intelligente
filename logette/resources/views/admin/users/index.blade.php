@@ -7,7 +7,7 @@
             <div class="card card-default">
                 <div class="card-header">
                     <h2>Utilisateurs</h2>
-                    @permission('User', 'create')
+                    @permission('User', 'crea te')
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-user"><i class="mdi mdi-plus mr-1"></i>Ajouter
                       </button>
                     @endpermission
