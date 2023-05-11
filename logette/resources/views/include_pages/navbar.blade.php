@@ -6,7 +6,7 @@
             <span class="sr-only">Toggle navigation</span>
         </button>
 
-        <span class="page-title">dashboard</span>
+        {{-- <span class="page-title">dashboard</span> --}}
 
         <div class="navbar-right ">
             <ul class="nav navbar-nav">
@@ -25,10 +25,10 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-link-item" href="#">
-                                    <i class="mdi mdi-email-outline"></i>
-                                    <span class="nav-text">Message</span>
-                                    <span class="badge badge-pill badge-primary">24</span>
+                                <a class="dropdown-link-item" href="{{url('/malogette')}}">
+                                    <i class="mdi mdi-image-filter-none"></i>
+                                    <span class="nav-text">Mes logettes</span>
+                                    <span class="badge badge-pill badge-primary">{{count(Auth::user()->logettes)}}</span>
                                 </a>
                             </li>
                             <li>

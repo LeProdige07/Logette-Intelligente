@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::group(['middleware' => ['auth']], function () {
+    require_once('admin_routes.php');
+    Route::get('/malogette', function () {
+        return view('admin.logette_by_user.index');
+    });
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-require_once('admin_routes.php');

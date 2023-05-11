@@ -14,9 +14,17 @@
                 <li class="{{ request()->is('home') ? 'active' : '' }}">
                     <a class="sidenav-item-link" href="{{ route('home') }}">
                         <i class="mdi mdi-briefcase-account-outline"></i>
-                        <span class="nav-text">Tableau de bord</span>
+                        <span class="nav-text">Accueil</span>
                     </a>
                 </li>
+                @permission('Logette', 'read')
+                    <li class="{{ request()->is('#') ? 'active' : '' }}">
+                        <a class="sidenav-item-link" href="#">
+                            <i class="mdi mdi-briefcase-account-outline"></i>
+                            <span class="nav-text">Tableau de bord</span>
+                        </a>
+                    </li>
+                @endpermission
                 @permission('Role', 'read')
                     <li class="has-sub {{ request()->is('roles') ? 'active expand' : '' }}">
                         <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#role"
@@ -57,6 +65,45 @@
                         </ul>
                     </li>
                 @endpermission
+                @permission('Logette', 'read')
+                    <li class="has-sub {{ request()->is('logettes') ? 'active expand' : '' }}">
+                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#logette"
+                            aria-expanded="false" aria-controls="logette">
+                            <i class="mdi mdi-image-filter-none"></i>
+                            <span class="nav-text">Logettes</span> <b class="caret"></b>
+                        </a>
+                        <ul class="collapse {{ request()->is('logettes') ? 'show' : '' }}" id="logette"
+                            data-parent="#sidebar-menu">
+                            <div class="sub-menu">
+                                <li class="{{ request()->is('logettes') ? 'active' : '' }}">
+                                    <a class="sidenav-item-link" href="{{ route('logettes.index') }}">
+                                        <span class="nav-text">Logettes</span>
+
+                                    </a>
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                @endpermission
+                <li class="has-sub {{ request()->is('malogette') ? 'active expand' : '' }}">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                        data-target="#malogette" aria-expanded="false" aria-controls="malogette">
+                        <i class="mdi mdi-image-filter-none"></i>
+                        <span class="nav-text">Mes Logettes</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse {{ request()->is('malogette') ? 'show' : '' }}" id="malogette"
+                        data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+                            @foreach (Auth::user()->logettes as $logette)
+                                <li class="{{ request()->is('malogette') ? 'active' : '' }}">
+                                    <a class="sidenav-item-link" href="{{ route('logettes.show', $logette->id) }}">
+                                        <span class="nav-text">{{ $logette->libelle }}</span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </div>
+                    </ul>
+                </li>
             </ul>
 
         </div>
