@@ -14,7 +14,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Plus</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-show-puissance">Plus</a>
                                 </div>
                             </div>
                             <div class="sub-title">
@@ -42,7 +42,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Plus</a>
+                                    <a class="dropdown-item" href="#"   data-toggle="modal" data-target="#modal-show-tension">Plus</a>
                                 </div>
                             </div>
                             <div class="sub-title">
@@ -70,7 +70,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Plus</a>
+                                    <a class="dropdown-item" href="#"   data-toggle="modal" data-target="#modal-show-energie">Plus</a>
                                 </div>
                             </div>
                             <div class="sub-title">
@@ -98,7 +98,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Plus</a>
+                                    <a class="dropdown-item" href="#"   data-toggle="modal" data-target="#modal-show-courant">Plus</a>
                                 </div>
                             </div>
                             <div class="sub-title">
@@ -150,4 +150,8 @@
             </div>
         </div>
     </div>
+    @include('admin.logette_by_user.puissances.index')
+    @include('admin.logette_by_user.tensions.index')
+    @include('admin.logette_by_user.energies.index')
+    @include('admin.logette_by_user.courants.index')
 @endsection

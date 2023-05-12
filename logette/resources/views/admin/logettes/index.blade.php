@@ -22,22 +22,23 @@
                     </ul>
                 </div>
                   @endif
-                  @if (Session::has('status'))
-                          <div class="alert alert-success">
-                              {{Session::get('status')}}
-                          </div>
-                  @endif
+                @if (Session::has('status'))
+                    <div class="alert alert-success">
+                        {{ Session::get('status') }}
+                    </div>
+                @endif
 
                 <div class="card-body">
-                        <div class="row">
-
-                            @foreach ($logettes as $logette)
-                                <div class="col-lg-6 col-xl-4">
-                                    <div class="card card-default p-4">
+                    <div class="row">
+                        @foreach ($logettes as $logette)
+                            <div class="col-lg-6 col-xl-4">
+                                <div class="card card-default p-4">
+                                    <a href="#" data-toggle="modal"
+                                        data-target="#modal-logette{{$logette->id}}">
                                         <div class="media-body">
                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                 <div class="form-group">
-                                                    <strong>{{ __('Name') }}:</strong>
+                                                    <strong>{{ __('Libellé') }}:</strong>
                                                     {{ $logette->libelle }}
                                                 </div>
                                             </div>
@@ -48,13 +49,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
+                                    @include('admin.logettes.modal.show')
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-
             </div>
-            @include('admin.logettes.modal.create')
-        @endsection
+        </div>
+        @include('admin.logettes.modal.create')
+    @endsection
