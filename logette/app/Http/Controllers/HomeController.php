@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Logette;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::selectRaw('year(created_at) year, monthname(created_at) month, count(*) data')
+            ->groupBy('year', 'month')
+            ->orderBy('year', 'desc')
+            ->pluck('data', 'month');
+
+        $labels = $users->keys();
+        $data = $users->values();
+
+
+        return view('home', compact('labels', 'data'));
     }
 }
