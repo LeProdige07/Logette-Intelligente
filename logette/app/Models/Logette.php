@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Logette extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'libelle',
+        'user_id',
+        'etat'
+    ];  
 
     public function user()
     {
