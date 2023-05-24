@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Logette;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LogetteApiController extends Controller
 {
@@ -89,5 +90,17 @@ class LogetteApiController extends Controller
     public function search($libelle)
     {
         return Logette::where('libelle', 'like','%'.$libelle.'%')->get();
+    }
+        /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logette(Request $request){
+        Storage::append("arduino-log.txt", 
+        "Time : " .now()->format("Y-m-d H:i:s") . ','.
+        "Temperature: " . $request->get("temperature", "n/a") . '°C, '. 
+        "Humidity : " . $request->get("humidity", "n/a") . '%');
     }
 }

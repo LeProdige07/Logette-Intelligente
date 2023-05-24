@@ -4,6 +4,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Public Routes
+Route::post('/', [App\Http\Controllers\LogetteApiController::class, 'logette']);
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::get('/logettes', [App\Http\Controllers\LogetteApiController::class, 'index']);
@@ -35,3 +37,4 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
