@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function register(Request $request){
+        
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
@@ -29,7 +30,7 @@ class AuthController extends Controller
             'token' => $token,
         ];
 
-        return response($response, 201);
+        return response($response, 200);
     }
 
     public function login(Request $request){
@@ -45,7 +46,7 @@ class AuthController extends Controller
         if (!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
                 'message' => 'Bad Creds'
-            ], 401);
+            ], 403);
         }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
@@ -55,7 +56,7 @@ class AuthController extends Controller
             'token' => $token,
         ];
 
-        return response($response, 201);
+        return response($response, 200);
     }
 
     public function logout(Request $request){
