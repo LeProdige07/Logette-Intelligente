@@ -9,6 +9,11 @@ class Puissance extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'puissance',
+        'logette_id'
+    ];
+
     public function logette()
     {
         return $this->belongsTo(Logette::class, 'logette_id', 'id');
