@@ -25,6 +25,7 @@ Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'
 // Protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // Logettes
+    Route::get('/logettes_by_user', [App\Http\Controllers\LogetteApiController::class, 'logettes_by_user']);
     Route::get('/logettes', [App\Http\Controllers\LogetteApiController::class, 'index']);
     Route::get('/logettes/{id}', [App\Http\Controllers\LogetteApiController::class, 'show']);
     Route::get('/logettes/search/{libelle}', [App\Http\Controllers\LogetteApiController::class, 'search']);
@@ -48,6 +49,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // Courants
     Route::get('/logette/{id}/courants', [App\Http\Controllers\CourantController::class, 'index']);
     Route::post('/logette/{id}/courants', [App\Http\Controllers\CourantController::class, 'store']);
+
+    // Etat de la logette
+    Route::post('/logette/{id}/etat', [App\Http\Controllers\LogetteApiController::class, 'etat_logette']);
+    Route::get('/logette/{id}/etat', [App\Http\Controllers\LogetteApiController::class, 'etat_status']);
 });
 
 
