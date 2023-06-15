@@ -36,4 +36,12 @@ class Logette extends Model
     {
         return $this->hasMany(Puissance::class, 'logette_id', 'id');
     }
+    public function temperatures()
+    {
+        return $this->hasMany(Temperature::class, 'logette_id', 'id');
+    }
+    public function humiditys()
+    {
+        return $this->hasMany(Humidity::class, 'logette_id', 'id');
+    }
 }
