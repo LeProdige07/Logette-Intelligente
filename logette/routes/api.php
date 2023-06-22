@@ -54,23 +54,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // Api for logout a user authenticated
     Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
 
-    // Api for take puissances of a logette : Mobile part
-    Route::get('/logette/{id}/puissances', [App\Http\Controllers\PuissanceController::class, 'index']);
-
-    // Api for take tensions of a logette : Mobile part
-    Route::get('/logette/{id}/tensions', [App\Http\Controllers\TensionController::class, 'index']);
-
-    // Api for take energies of a logette : Mobile part
-    Route::get('/logette/{id}/energies', [App\Http\Controllers\EnergieController::class, 'index']);
-
-    // Api for take courants of a logette : Mobile part
-    Route::get('/logette/{id}/courants', [App\Http\Controllers\CourantController::class, 'index']);
-
-    // Api for take humidities of a logette : Mobile part
-    Route::get('/logette/{id}/humidities', [App\Http\Controllers\HumidityController::class, 'index']);
-
-    // Api for take temperatures of a logette : Mobile part
-    Route::get('/logette/{id}/temperatures', [App\Http\Controllers\TemperatureController::class, 'index']);
+    // Api for take puissances, temperatures, tensions, energies, courants, humidities of a logette : Mobile part
+    Route::get('/logette/{id}/parametres', [App\Http\Controllers\ParametresController::class, 'index']);
 
     // Api for post state(Etat) of a logette : Mobile part
     Route::post('/logette/{id}/etat', [App\Http\Controllers\LogetteApiController::class, 'etat_logette']);
