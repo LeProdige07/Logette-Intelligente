@@ -41,9 +41,9 @@ class CreateUserSuperAdmin extends Command
     public function handle()
     {
         $user = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => bcrypt('123456')
+            'name' => 'Don Makila',
+            'email' => 'donmakila@kimengineering.net',
+            'password' => bcrypt('Fosm@k2001')
         ]);
         $roleId = DB::table('roles')->where('name', 'Admin')->get('id')->first();
         $user->assignRole($roleId);
