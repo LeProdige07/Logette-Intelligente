@@ -3,7 +3,7 @@
         <!-- Aplication Brand -->
         <div class="app-brand">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('backend/images/logo.png') }}" alt="Logette Intelligente">
+                <img src="{{ asset('backend/images/logo.png', env('REDIRECT_HTTPS')) }}" alt="Logette Intelligente">
                 <span class="brand-name">Logette Intelligente</span>
             </a>
         </div>

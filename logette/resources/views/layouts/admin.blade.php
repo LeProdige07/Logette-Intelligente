@@ -9,22 +9,22 @@
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
-    <link href="{{asset('backend/plugins/material/css/materialdesignicons.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('backend/plugins/simplebar/simplebar.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/material/css/materialdesignicons.min.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/simplebar/simplebar.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
 
     <!-- PLUGINS CSS STYLE -->
-    <link href="{{asset('backend/plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
-    <link href="{{asset('backend/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('backend/plugins/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" />
-    <link href="{{asset('backend/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/nprogress/nprogress.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/jvectormap/jquery-jvectormap-2.0.3.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/daterangepicker/daterangepicker.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <link href="{{asset('backend/plugins/toaster/toastr.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/toaster/toastr.min.css', env('REDIRECT_HTTPS'))}}" rel="stylesheet" />
     <!-- MONO CSS -->
-    <link id="main-css-href" rel="stylesheet" href="{{asset('backend/css/style.css')}}" />
+    <link id="main-css-href" rel="stylesheet" href="{{asset('backend/css/style.css', env('REDIRECT_HTTPS'))}}" />
     <!-- FAVICON -->
-    <link href="{{asset('backend/images/favicon.png')}}" rel="shortcut icon" />
+    <link href="{{asset('backend/images/favicon.png', env('REDIRECT_HTTPS'))}}" rel="shortcut icon" />
 
-    <script src="{{asset('backend/plugins/nprogress/nprogress.js')}}"></script>
+    <script src="{{asset('backend/plugins/nprogress/nprogress.js', env('REDIRECT_HTTPS'))}}"></script>
 </head>
 
 
@@ -60,29 +60,29 @@
         </div>
     </div>
     @yield('scripts')
-    <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('backend/plugins/jquery/jquery.min.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/plugins/simplebar/simplebar.min.js', env('REDIRECT_HTTPS'))}}"></script>
     <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 
 
 
-    <script src="{{asset('backend/plugins/apexcharts/apexcharts.js')}}"></script>
+    <script src="{{asset('backend/plugins/apexcharts/apexcharts.js', env('REDIRECT_HTTPS'))}}"></script>
 
 
 
-    <script src="{{asset('backend/plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('backend/plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js', env('REDIRECT_HTTPS'))}}"></script>
 
 
 
-    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-world-mill.js')}}"></script>
-    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-us-aea.js')}}"></script>
+    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-world-mill.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-us-aea.js', env('REDIRECT_HTTPS'))}}"></script>
 
 
 
-    <script src="{{asset('backend/plugins/daterangepicker/moment.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/daterangepicker/daterangepicker.js')}}"></script>
+    <script src="{{asset('backend/plugins/daterangepicker/moment.min.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/plugins/daterangepicker/daterangepicker.js', env('REDIRECT_HTTPS'))}}"></script>
     <script>
         jQuery(document).ready(function() {
             jQuery('input[name="dateRange"]').daterangepicker({
@@ -107,14 +107,14 @@
 
 
 
-    <script src="{{asset('backend/plugins/toaster/toastr.min.js')}}"></script>
+    <script src="{{asset('backend/plugins/toaster/toastr.min.js', env('REDIRECT_HTTPS'))}}"></script>
 
 
 
-    <script src="{{asset('backend/js/mono.js')}}"></script>
-    <script src="{{asset('backend/js/chart.js')}}"></script>
-    <script src="{{asset('backend/js/map.js')}}"></script>
-    <script src="{{asset('backend/js/custom.js')}}"></script>
+    <script src="{{asset('backend/js/mono.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/js/chart.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/js/map.js', env('REDIRECT_HTTPS'))}}"></script>
+    <script src="{{asset('backend/js/custom.js', env('REDIRECT_HTTPS'))}}"></script>
 
 
 
