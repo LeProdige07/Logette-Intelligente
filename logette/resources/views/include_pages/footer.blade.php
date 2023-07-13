@@ -2,7 +2,7 @@
 <footer class="footer mt-auto">
     <div class="copyright bg-white">
       <p>
-        &copy; <span id="copy-year"></span> Copyright App-Logette Intelligente by <a class="text-primary" href="#" target="_blank" >Kim Engineering</a>.
+        &copy; <span id="copy-year"></span> Copyright App-Logette Intelligente by <a class="text-primary" href="https://kimengineering.net/" target="_blank" >Kim Engineering</a>.
       </p>
     </div>
     <script>
